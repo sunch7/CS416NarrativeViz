@@ -8,7 +8,7 @@ var Scene1 = function loadScene1() {
 	// d3.select("#scene3").classed("active",false);
   
   // Text
-	d3.select("#head1").text("Scene 1);
+	d3.select("#head1").text("Scene 1");
 	d3.select("#head2").text("Scene 1 Heading");
 	d3.select("#p1").text("Scene 1 Test 1");
 	d3.select("#p2").text("Scene 1 Test 2");
