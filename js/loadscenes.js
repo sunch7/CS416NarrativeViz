@@ -1,3 +1,6 @@
+var data;
+var svg;
+
 function loadScene1() {
   // Button Activation
 	d3.select("#scene1").classed("active",true);
