@@ -1,8 +1,8 @@
 function loadScene1() {
   // Button Activation
-	d3.select("#b1").classed("active",true);
-	d3.select("#b2").classed("active",false);
-	d3.select("#b3").classed("active",false);
+	d3.select("#scene1").classed("active",true);
+	d3.select("#scene2").classed("active",false);
+	d3.select("#scene3").classed("active",false);
   
   // Text
 	d3.select("#scenes-div").insert("div").classed("heading",true);
@@ -14,9 +14,9 @@ function loadScene1() {
 
 function loadScene2() {
   // Button Activation
-	d3.select("#b1").classed("active",false);
-	d3.select("#b2").classed("active",true);
-	d3.select("#b3").classed("active",false);
+	d3.select("#scene1").classed("active",false);
+	d3.select("#scene2").classed("active",true);
+	d3.select("#scene3").classed("active",false);
   
   // Text
 	d3.select("#scenes-div").insert("div").classed("heading",true);
@@ -28,9 +28,9 @@ function loadScene2() {
 
 function loadScene3() {
   // Button Activation
-	d3.select("#b1").classed("active",false);
-	d3.select("#b2").classed("active",false);
-	d3.select("#b3").classed("active",true);
+	d3.select("#scene1").classed("active",false);
+	d3.select("#scene2").classed("active",false);
+	d3.select("#scene3").classed("active",true);
   
   // Text
 	d3.select("#scenes-div").insert("div").classed("heading",true);
