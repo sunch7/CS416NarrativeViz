@@ -93,7 +93,7 @@ async function loadScene3() {
 	teamdomain = ["Atl","Bos","Bro","Cha","Chi","Cle","Dal","Den","Det","Gol","Hou","Ind","Lac",
 		"Lal","Mem","Mia","Mil","Min","Nor","Nyk","Okc","Orl","Phi","Pho","Por","Sac","San","Tor","Uta","Was"];
 	var xs = d3.scaleBand().domain(teamdomain).range([0,600]);
-	var ys = d3.scaleLinear().domain([-8,8]).range([300,0]);
+	var ys = d3.scaleLinear().domain([-9,9]).range([300,0]);
 	d3.select("#scenes-div").select("svg").remove();
 	svg = d3.select("#scenes-div").append("svg").attr("width",700).attr("height",400).append("g").attr("transform", "translate(" + 50 + "," + 50 + ")");
 	svg.selectAll("rect")
@@ -103,7 +103,7 @@ async function loadScene3() {
     	.attr('x',function(d,i) {return xs(d['Team Abbrev.']);})
     	.attr('y',function(d,i) {return ys(d['ACH'] * d['GP']);})
     	.attr('width', xs.bandwidth())
-    	.attr('height', function(d,i) {return 300-ys(d['ACH']);})
+    	.attr('height', function(d,i) {return 300-ys(d['ACH'] * d['GP']);})
 	.style('fill', function(d,i) {
 		return (d.CONF == "East" ? d3.color("gold") : d3.color("steelblue"));
 	})
