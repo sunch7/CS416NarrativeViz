@@ -34,7 +34,7 @@ async function loadScene2() {
 	const data = await d3.csv("2020NBATeamStats.csv");
 	teamdomain = ["Atl","Bos","Bro","Cha","Chi","Cle","Dal","Den","Det","Gol","Hou","Ind","Lac",
 		"Lal","Mem","Mia","Mil","Min","Nor","Nyk","Okc","Orl","Phi","Pho","Por","Sac","San","Tor","Uta","Was"];
-	var xs = d3.scaleBand().domain([-1.5,1.5]).range([0,600]);
+	var xs = d3.scaleLinear().domain([-1.5,1.5]).range([0,600]);
 	var ys = d3.scaleLinear().domain([0,1]).range([300,0]);
 	d3.select("#scenes-div").select("svg").remove();
 	svg = d3.select("#scenes-div").append("svg").attr("width",700).attr("height",400).append("g").attr("transform", "translate(" + 50 + "," + 50 + ")");
