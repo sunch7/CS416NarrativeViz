@@ -26,7 +26,7 @@ async function loadScene1() {
     	.attr('width', xs.bandwidth())
     	.attr('height', function(d,i) {return 350-ys(d['PTS DIFF']);})
 	.style('fill', function(d,i) {
-		return (d.CONF == "East" ? d3.color("red") : d3.color("steelblue"));
+		return (d.CONF == "East" ? d3.color("gold") : d3.color("steelblue"));
 	})
 	d3.select("#p1").text("Scene 1 Test 1");
 	d3.select("#p2").text("Scene 1 Test 2");
