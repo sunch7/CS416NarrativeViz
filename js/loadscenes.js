@@ -146,12 +146,12 @@ async function loadScene4() {
 	d3.select("#scenes-div").selectAll("svg").remove();
 	d3.select("#selector-div").selectAll("SelectTeam").remove();
 	
+	// Dropdown selector
+	d3.select("#selector-div").append("label").attr("for","SelectTeam").text("Choose a team: ")
 	var dropDown = d3.select("#selector-div").append("select").attr("name", "name-list").attr("id","SelectTeam");
 	dropDown.selectAll("option").data(teamdomain).enter().append("option")
 	.text(function(d,i) {return d;})
 	.attr("value", function(d,i) {return d;});
-	
-	d3.select("#selector-div").append("label").attr("for","SelectTeam").text("Choose a team: ")
 	
 	/*svg = d3.select("#scenes-div").append("svg").attr("width",700).attr("height",400).append("g").attr("transform", "translate(" + 50 + "," + 50 + ")");
 	svg.selectAll("rect")
