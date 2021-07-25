@@ -11,7 +11,8 @@ async function loadIntro() {
 	
 	// Data
 	d3.select("#scenes-div").selectAll("svg").remove();
-	d3.select("#selector-div").selectAll("SelectTeam").remove();
+	d3.select("#selector-div").selectAll("select").remove();
+	d3.select("#selector-div").selectAll("label").remove();
 	
 	// Text
 	d3.select("#head2").text("Introduction");
@@ -33,7 +34,8 @@ async function loadScene1() {
 	var xs = d3.scaleLinear().domain([-1.5,1.5]).range([0,600]);
 	var ys = d3.scaleLinear().domain([0,1]).range([300,0]);
 	d3.select("#scenes-div").selectAll("svg").remove();
-	d3.select("#selector-div").selectAll("SelectTeam").remove();
+	d3.select("#selector-div").selectAll("select").remove();
+	d3.select("#selector-div").selectAll("label").remove();
 	
 	svg = d3.select("#scenes-div").append("svg").attr("width",700).attr("height",400).append("g").attr("transform", "translate(" + 50 + "," + 50 + ")");
 	svg.selectAll("circle")
@@ -68,7 +70,8 @@ async function loadScene2() {
 	var xs = d3.scaleLinear().domain([-11,11]).range([0,600]);
 	var ys = d3.scaleLinear().domain([0,1]).range([300,0]);
 	d3.select("#scenes-div").selectAll("svg").remove();
-	d3.select("#selector-div").selectAll("SelectTeam").remove();
+	d3.select("#selector-div").selectAll("select").remove();
+	d3.select("#selector-div").selectAll("label").remove();
 	
 	svg = d3.select("#scenes-div").append("svg").attr("width",700).attr("height",400).append("g").attr("transform", "translate(" + 50 + "," + 50 + ")");
 	svg.selectAll("circle")
@@ -104,7 +107,8 @@ async function loadScene3() {
 	var xs = d3.scaleBand().domain(teamdomain).range([0,600]);
 	var ys = d3.scaleLinear().domain([-9,9]).range([300,0]);
 	d3.select("#scenes-div").selectAll("svg").remove();
-	d3.select("#selector-div").selectAll("SelectTeam").remove();
+	d3.select("#selector-div").selectAll("select").remove();
+	d3.select("#selector-div").selectAll("label").remove();
 	
 	svg = d3.select("#scenes-div").append("svg").attr("width",700).attr("height",400).append("g").attr("transform", "translate(" + 50 + "," + 50 + ")");
 	svg.selectAll("rect")
@@ -142,10 +146,12 @@ async function loadScene4() {
 	d3.select("#scenes-div").selectAll("svg").remove();
 	d3.select("#selector-div").selectAll("SelectTeam").remove();
 	
-	var dropDown = d3.select("#selector-div").append("select").attr("name", "name-list");
+	var dropDown = d3.select("#selector-div").append("select").attr("name", "name-list").attr("id","SelectTeam");
 	dropDown.selectAll("option").data(teamdomain).enter().append("option")
 	.text(function(d,i) {return d;})
 	.attr("value", function(d,i) {return d;});
+	
+	d3.select("#selector-div").append("label").attr("for","SelectTeam").text("Choose a team: ")
 	
 	/*svg = d3.select("#scenes-div").append("svg").attr("width",700).attr("height",400).append("g").attr("transform", "translate(" + 50 + "," + 50 + ")");
 	svg.selectAll("rect")
