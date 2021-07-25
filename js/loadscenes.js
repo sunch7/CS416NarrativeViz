@@ -23,7 +23,7 @@ async function loadScene1() {
     	.attr('x',function(d,i) {return xs(d['Team Abbrev.']);})
     	.attr('y',function(d,i) {return ys(d['PTS DIFF']);})
     	.attr('width',function(d,i) {return xs(d);})
-    	.attr('height',function(d,i) {return 300-ys(d['PTS DIFF']);})
+    	.attr('height',function(d,i) {return 300;})
 	.style('fill', d3.color("steelblue"));
 	d3.select("#p1").text("Scene 1 Test 1");
 	d3.select("#p2").text("Scene 1 Test 2");
