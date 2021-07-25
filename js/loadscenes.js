@@ -38,10 +38,10 @@ async function loadScene2() {
 	var ys = d3.scaleLinear().domain([0,1]).range([300,0]);
 	d3.select("#scenes-div").select("svg").remove();
 	svg = d3.select("#scenes-div").append("svg").attr("width",700).attr("height",400).append("g").attr("transform", "translate(" + 50 + "," + 50 + ")");
-	svg.selectAll("rect")
+	svg.selectAll("circle")
   	.data(data)
   	.enter()
-  	.append("rect")
+  	.append("circle")
     	.attr('cx',function(d,i) {return xs(d['SOS']);})
     	.attr('cy',function(d,i) {return ys(d['WIN%']);})
     	.attr('r', 5)
