@@ -8,7 +8,7 @@ function loadScene1() {
 	d3.select("#scene3").classed("active",false);
   
   // Text
-	const data = d3.csv("2020NBATeamStats.csv");
+	const data = await d3.csv("2020NBATeamStats.csv");
 	console.log(data);
 	teamdomain = ["Atl","Bos","Bro","Cha","Chi","Cle","Dal","Den","Det","Gol","Hou","Ind","Lac",
 		"Lal","Mem","Mia","Mil","Min","Nor","Nyk","Okc","Orl","Phi","Pho","Por","Sac","San","Tor","Uta","Was"];
