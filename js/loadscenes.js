@@ -14,6 +14,7 @@ async function loadScene1() {
 		"Lal","Mem","Mia","Mil","Min","Nor","Nyk","Okc","Orl","Phi","Pho","Por","Sac","San","Tor","Uta","Was"];
 	var xs = d3.scaleBand().domain(teamdomain).range([0,300]);
 	var ys = d3.scaleLinear().domain([-11,11]).range([300,0]);
+	console.log("Start");
 	d3.select("#head2").text("Average Point Differential per game in 2020-21 for all NBA teams");
 	d3.select("#svg").append("g").attr("transform", "translate(" + 50 + "," + 50 + ")")
 	.selectAll("rect")
