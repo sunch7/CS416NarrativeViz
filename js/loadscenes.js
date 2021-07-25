@@ -20,9 +20,9 @@ async function loadScene1() {
   	.data(data)
   	.enter()
   	.append("rect")
-    	.attr('x',function(d,i) {return xs(d['Team Abbrev.']);})
-    	.attr('y',function(d,i) {return ys(d['PTS DIFF']);})
-    	.attr('width',function(d,i) {return xs.bandwidth();})
+    	.attr('x',function(d,i) {console.log(xs(d['Team Abbrev.'])); return xs(d['Team Abbrev.']);})
+    	.attr('y',function(d,i) {console.log(ys(d['PTS DIFF'])); return ys(d['PTS DIFF']);})
+    	.attr('width',function(d,i) {console.log(xs.bandwidth()); return xs.bandwidth();})
     	.attr('height',10)
 	.style('fill', d3.color("steelblue"));
 	d3.select("#p1").text("Scene 1 Test 1");
