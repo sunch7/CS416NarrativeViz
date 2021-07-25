@@ -101,7 +101,7 @@ async function loadScene3() {
   	.enter()
   	.append("rect")
     	.attr('x',function(d,i) {return xs(d['Team Abbrev.']);})
-    	.attr('y',function(d,i) {return ys(d['ACH']) * d['GP'];})
+    	.attr('y',function(d,i) {return ys(d['ACH'] * d['GP']);})
     	.attr('width', xs.bandwidth())
     	.attr('height', function(d,i) {return 300-ys(d['ACH']);})
 	.style('fill', function(d,i) {
