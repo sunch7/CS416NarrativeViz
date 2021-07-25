@@ -142,7 +142,7 @@ async function loadScene4() {
 	d3.select("#scenes-div").selectAll("svg").remove();
 	d3.select("#selector-div").selectAll("SelectTeam").remove();
 	
-	var dropDown = d3.select("#selector-div").append("SelectTeam").attr("name", "name-list");
+	var dropDown = d3.select("#selector-div").append("select").attr("name", "name-list");
 	dropDown.selectAll("option").data(teamdomain).enter().append("option")
 	.text(function(d,i) {return d;})
 	.attr("value", function(d,i) {return d;});
