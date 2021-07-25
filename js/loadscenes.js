@@ -20,8 +20,8 @@ async function loadScene1() {
   	.data(data)
   	.enter()
   	.append("rect")
-    	.attr('x',function(d,i) {return xs(data['Team Abbrev.']);})
-    	.attr('y',function(d,i) {return ys(data['PTS DIFF']);})
+    	.attr('x',function(d,i) {return xs(d['Team Abbrev.']);})
+    	.attr('y',function(d,i) {return ys(d['PTS DIFF']);})
     	.attr('width',function(d,i) {return xs(d);})
     	.attr('height',10);
 	d3.select("#p1").text("Scene 1 Test 1");
