@@ -34,9 +34,9 @@ async function loadScene1() {
 
 async function loadScene2() {
   // Button Activation
-	d3.select("#scene1").style("background-color",d3.color("grey"));
+	d3.select("#scene1").style("background-color",d3.color(''));
 	d3.select("#scene2").style("background-color",d3.color("yellow"));
-	d3.select("#scene3").style("background-color",d3.color("grey"));
+	d3.select("#scene3").style("background-color",d3.color(''));
   // Data
 	const data = await d3.csv("2020NBATeamStats.csv");
 	teamdomain = ["Atl","Bos","Bro","Cha","Chi","Cle","Dal","Den","Det","Gol","Hou","Ind","Lac",
@@ -65,8 +65,8 @@ async function loadScene2() {
 
 async function loadScene3() {
   // Button Activation
-	d3.select("#scene1").style("background-color",d3.color("grey"));
-	d3.select("#scene2").style("background-color",d3.color("grey"));
+	d3.select("#scene1").style("background-color",d3.color(''));
+	d3.select("#scene2").style("background-color",d3.color(''));
 	d3.select("#scene3").style("background-color",d3.color("yellow"));
 
   // Load data
