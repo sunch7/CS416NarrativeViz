@@ -9,10 +9,11 @@ function loadScene1() {
   
   // Text
 	const data = d3.csv("2020NBATeamStats.csv");
+	console.log(data);
 	teamdomain = ["Atl","Bos","Bro","Cha","Chi","Cle","Dal","Den","Det","Gol","Hou","Ind","Lac",
 		"Lal","Mem","Mia","Mil","Min","Nor","Nyk","Okc","Orl","Phi","Pho","Por","Sac","San","Tor","Uta","Was"];
-	var xs = d3.scaleBand().domain(teamdomain).range([0,500]);
-	var ys = d3.scaleLinear().domain([-11,11]).range([500,0]);
+	var xs = d3.scaleBand().domain(teamdomain).range([0,300]);
+	var ys = d3.scaleLinear().domain([-11,11]).range([300,0]);
 	d3.select("#head2").text("Average Point Differential per game in 2020-21 for all NBA teams");
 	d3.select("#svg").append("#g")
 	.selectAll('rect')
