@@ -15,8 +15,6 @@ async function loadScene1() {
 	var xs = d3.scaleBand().domain(teamdomain).range([0,300]);
 	var ys = d3.scaleLinear().domain([-11,11]).range([300,0]);
 	d3.select("#head2").text("Average Point Differential per game in 2020-21 for all NBA teams");
-	svg = d3.select("svg");
-	console.log(svg);
 	d3.select("svg").append("g").attr("transform", "translate(" + 50 + "," + 50 + ")")
 	.selectAll("rect")
   	.data(data)
@@ -24,7 +22,7 @@ async function loadScene1() {
   	.append("rect")
     	.attr('x',function(d,i) {return xs(d['Team Abbrev.']);})
     	.attr('y',function(d,i) {return ys(d['PTS DIFF']);})
-    	.attr('width',function(d,i) {return xs.bandwidth();})
+    	.attr('width',function(d,i) {return xs(d);})
     	.attr('height',10)
 	.style('fill', d3.color("steelblue"));
 	d3.select("#p1").text("Scene 1 Test 1");
