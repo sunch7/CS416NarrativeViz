@@ -17,7 +17,6 @@ async function loadScene1() {
 	d3.select("#head2").text("Average Point Differential per game in 2020-21 for all NBA teams");
 	d3.select("#scenes-div").select("svg").remove();
 	svg = d3.select("#scenes-div").append("svg").attr("width",700).attr("height",400).append("g").attr("transform", "translate(" + 50 + "," + 50 + ")");
-	console.log(svg);
 	svg.selectAll("rect")
   	.data(data)
   	.enter()
@@ -26,7 +25,10 @@ async function loadScene1() {
     	.attr('y',function(d,i) {return ys(d['PTS DIFF']);})
     	.attr('width', xs.bandwidth())
     	.attr('height', function(d,i) {return 350-ys(d['PTS DIFF']);})
-	.style('fill', d3.color("steelblue"));
+	.style('fill', function(d,i) {
+		if (d.CONF == "East"）d3.color("red"));
+		else if (d.CONF == "West") d3.color("steelblue"));
+	})
 	d3.select("#p1").text("Scene 1 Test 1");
 	d3.select("#p2").text("Scene 1 Test 2");
 }
