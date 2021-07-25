@@ -24,12 +24,12 @@ async function loadScene1() {
     	.attr('x',function(d,i) {return xs(d['Team Abbrev.']);})
     	.attr('y',function(d,i) {return ys(d['PTS DIFF']);})
     	.attr('width', xs.bandwidth())
-    	.attr('height', function(d,i) {return 350-ys(d['PTS DIFF']);})
+    	.attr('height', function(d,i) {return 300-ys(d['PTS DIFF']);})
 	.style('fill', function(d,i) {
 		return (d.CONF == "East" ? d3.color("gold") : d3.color("steelblue"));
 	})
-	svg.append("g").attr("transform", "translate(" + 50 + "," + 50 + ")").call(d3.axisLeft(ys));
-	svg.append("g").attr("transform", "translate(" + 50 + "," + 350 + ")").call(d3.axisBottom(xs));
+	svg.call(d3.axisLeft(ys));
+	svg.append("g").attr("transform", "translate(" + 0 + "," + 300 + ")").call(d3.axisBottom(xs));
 	d3.select("#p1").text("Scene 1 Test 1");
 	d3.select("#p2").text("Scene 1 Test 2");
 }
