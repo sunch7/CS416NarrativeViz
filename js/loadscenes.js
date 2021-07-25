@@ -8,13 +8,14 @@ function loadScene1() {
 	d3.select("#scene3").classed("active",false);
   
   // Text
-	const data = d3.csv('2020NBATeamStats.csv');
-	var xs = d3.scaleBand().domain(["Atl","Bos","Bro","Cha","Chi","Cle","Dal","Den","Det","Gol","Hou","Ind","Lac",
-		"Lal","Mem","Mia","Mil","Min","Nor","Nyk","Okc","Orl","Phi","Pho","Por","Sac","San","Tor","Uta","Was"]).range([0,500]);
+	const data = d3.csv("2020NBATeamStats.csv");
+	teamdomain = ["Atl","Bos","Bro","Cha","Chi","Cle","Dal","Den","Det","Gol","Hou","Ind","Lac",
+		"Lal","Mem","Mia","Mil","Min","Nor","Nyk","Okc","Orl","Phi","Pho","Por","Sac","San","Tor","Uta","Was"];
+	var xs = d3.scaleBand().domain(teamdomain).range([0,500]);
 	var ys = d3.scaleLinear().domain([-11,11]).range([500,0]);
 	d3.select("#head2").text("Average Point Differential per game in 2020-21 for all NBA teams");
-	d3.select("#svg").append("g").
-	selectAll('rect')
+	d3.select("#svg").append("#g")
+	.selectAll('rect')
   	.data(data)
   	.enter()
   	.append('rect')
