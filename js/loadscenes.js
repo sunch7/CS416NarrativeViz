@@ -1,7 +1,7 @@
 var data;
 var svg;
 
-function loadScene1() {
+async function loadScene1() {
   // Button Activation
 	d3.select("#scene1").classed("active",true);
 	d3.select("#scene2").classed("active",false);
