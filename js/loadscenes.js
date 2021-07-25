@@ -15,9 +15,10 @@ async function loadScene1() {
 	var xs = d3.scaleBand().domain(teamdomain).range([0,300]);
 	var ys = d3.scaleLinear().domain([-11,11]).range([300,0]);
 	d3.select("#head2").text("Average Point Differential per game in 2020-21 for all NBA teams");
-	svg = d3.select("svg");
-	console.log("svg");
-	d3.select("svg").append("g").attr("transform", "translate(" + 50 + "," + 50 + ")")
+	d3.select("#scenes-div").select("svg").remove();
+	svg = d3.select("#scenes-div").append("svg").attr("width",400).attr("height",400);
+	console.log(svg);
+	svg.append("g").attr("transform", "translate(" + 50 + "," + 50 + ")")
 	.selectAll("rect")
   	.data(data)
   	.enter()
