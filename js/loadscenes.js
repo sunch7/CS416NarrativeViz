@@ -13,18 +13,16 @@ async function loadScene1() {
 		"Lal","Mem","Mia","Mil","Min","Nor","Nyk","Okc","Orl","Phi","Pho","Por","Sac","San","Tor","Uta","Was"];
 	console.log("teamdomain");
 	var xs = d3.scaleBand().domain(teamdomain).range([0,300]);
-	console.log(xs);
 	var ys = d3.scaleLinear().domain([-11,11]).range([300,0]);
-	console.log(ys);
 	d3.select("#head2").text("Average Point Differential per game in 2020-21 for all NBA teams");
-	d3.select("#svg").append("g").attr("transform", "translate(" + 50 + "," + 50 + ")")
+	d3.select("#svg1").append("g").attr("transform", "translate(" + 50 + "," + 50 + ")")
 	.selectAll("rect")
   	.data(data)
   	.enter()
   	.append("rect")
-    	.attr('x',function(d,i) {console.log(xs(d['Team Abbrev.'])); return xs(d['Team Abbrev.']);})
-    	.attr('y',function(d,i) {console.log(ys(d['PTS DIFF'])); return ys(d['PTS DIFF']);})
-    	.attr('width',function(d,i) {console.log(xs.bandwidth()); return xs.bandwidth();})
+    	.attr('x',function(d,i) {return xs(d['Team Abbrev.']);})
+    	.attr('y',function(d,i) {return ys(d['PTS DIFF']);})
+    	.attr('width',function(d,i) {return xs.bandwidth();})
     	.attr('height',10)
 	.style('fill', d3.color("steelblue"));
 	d3.select("#p1").text("Scene 1 Test 1");
