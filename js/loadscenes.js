@@ -117,6 +117,28 @@ async function loadScene2() {
 	d3.select("#scenes-div").selectAll("svg").remove();
 	d3.select("#selector-div").style("visibility", "hidden");
 	
+	// Tooltip
+	var Tooltip = d3.select("#scenes-div").select("#tooltip-div")
+    	.style("opacity", 0)
+    	.attr("class", "tooltip")
+    	.style("background-color", "white")
+    	.style("border", "solid")
+    	.style("border-width", "2px")
+    	.style("border-radius", "5px")
+    	.style("padding", "5px")
+
+  	var mouseover = function(d) {Tooltip.style("opacity", 1)
+    	d3.select(this).style("stroke", "black").style("opacity", 1)}
+	
+  	var mousemove = function(d) {
+    	Tooltip.html("The exact value of<br>this cell is: " + d.value)
+      	.style("left", (d3.mouse(this)[0]+70) + "px")
+      	.style("top", (d3.mouse(this)[1]) + "px")}
+	
+  	var mouseleave = function(d) {
+    	Tooltip.style("opacity", 0)
+    	d3.select(this).style("stroke", "none").style("opacity", 0.7)}
+	
 	svg = d3.select("#scenes-div").append("svg").attr("width",700).attr("height",360).append("g").attr("transform", "translate(" + 50 + "," + 30 + ")");
 	svg.selectAll("circle")
   	.data(data)
@@ -168,6 +190,8 @@ async function loadScene2() {
     	.text("Win Rate");
 	
 	loadimage(svg);
+	
+	
 	
   // Text
 	d3.select("#head2").text("Win rate vs Expected Point Differential per 100 posessions for NBA teams in 2020-21 Season");
