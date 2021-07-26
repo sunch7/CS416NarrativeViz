@@ -1,5 +1,7 @@
 var data;
 var svg;
+const teamdomain = ["Atl","Bos","Bro","Cha","Chi","Cle","Dal","Den","Det","Gol","Hou","Ind","Lac",
+		"Lal","Mem","Mia","Mil","Min","Nor","Nyk","Okc","Orl","Phi","Pho","Por","Sac","San","Tor","Uta","Was"];
 
 async function loadIntro() {
 	// Button Activation
@@ -147,28 +149,46 @@ async function loadScene4() {
 	d3.select("#selector-div").selectAll("SelectTeam").remove();
 	
 	// Dropdown selector
-	d3.select("#selector-div").append("label").attr("for","SelectTeam").text("Choose a team: ")
+	d3.select("#selector-div").append("label").attr("for","SelectTeam")..attr("onchange", "loadteamdata(this.value)").text("Choose a team: ")
 	var dropDown = d3.select("#selector-div").append("select").attr("name", "name-list").attr("id","SelectTeam");
 	dropDown.selectAll("option").data(teamdomain).enter().append("option")
 	.text(function(d,i) {return d;})
 	.attr("value", function(d,i) {return d;});
+}
+
+async function loadteamdata(Team) {
+	const data = await d3.csv("2020NBATeamStats.csv");
+	svg = d3.select("#scenes-div").append("svg").attr("width",400).attr("height",360).append("g").attr("transform", "translate(" + 50 + "," + 50 + ")");
+	index = -1;
+	for (int i = 0; i < teamdomain.length; i++) {
+		if (Team == teamdomain[i])
+		{
+			index = i;
+			break;
+		}
+	}
+	Console.log("index = " + str(index));
+	if (index == -1)
+	{
+		return;
+	}
 	
-	/*svg = d3.select("#scenes-div").append("svg").attr("width",700).attr("height",400).append("g").attr("transform", "translate(" + 50 + "," + 50 + ")");
+	PointStats = [data[index]['PTS/GM'], data[index]['aPTS/GM'], data[index]['OEFF'], data[index]['DEFF']];
+	var xs = d3.scaleBand().domain(["Pts For", "Pts Against", "Off. Eff.", "Def. Eff."]).range([0,300]);
+	var ys = d3.scaleLinear().domain([100,120]).range([300,0]);
+	
 	svg.selectAll("rect")
   	.data(data)
   	.enter()
   	.append("rect")
-    	.attr('x',function(d,i) {return xs(d['Team Abbrev.']);})
-    	.attr('y',function(d,i) {return ys(d['ACH'] * d['GP']);})
-    	.attr('width', xs.bandwidth())
-    	.attr('height', function(d,i) {return 300-ys(d['ACH'] * d['GP']);})
+    	.attr('x',function(d,i) {return xs(d);})
+    	.attr('y',function(d,i) {return ys(d);})
+    	.attr('width', xs.bandwidth() / 2)
+    	.attr('height', function(d,i) {return 300-ys(d);})
 	.style('fill', function(d,i) {
 		return (d.CONF == "East" ? d3.color("gold") : d3.color("steelblue"));
 	})
-	svg.call(d3.axisLeft(ys));
-	svg.append("g").attr("transform", "translate(" + 0 + "," + 300 + ")").call(d3.axisBottom(xs));*/
-  
-  // Text
+	// Text
 	d3.select("#head2").text("Detailed Stats for each team");
 	d3.select("#p1").text("Scene 3 Test 1");
 	d3.select("#p2").text("Scene 3 Test 2");
