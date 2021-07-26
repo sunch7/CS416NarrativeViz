@@ -15,11 +15,11 @@ async function loadIntro() {
 	
 	// Text
 	d3.select("#head2").text("Introduction");
-	d3.select("#p1").text("In sports, the most straight-forward way to evaluate a team is to look at their record. But sometimes, a team's record is not the only 
-			      indication of how good a team is. This is also true for NBA; hypothetically, a team could be winning half of their matches by 20 points 
-			      and losing the other half by 1 point, and end up being average in records although they are expected to win a lot more than they did. 
-			      This is what we attribute to as the luck factor; in this presentation, we will take a look at how the luck factor affected all the NBA
-			      teams in the 2020-21 Regular Season.");
+	d3.select("#p1").text("In sports, the most straight-forward way to evaluate a team is to look at their record. But sometimes, a team's record is not the only " +
+			      "indication of how good a team is. This is also true for NBA; hypothetically, a team could be winning half of their matches by 20 points " +
+			      "and losing the other half by 1 point, and end up being average in records although they are expected to win a lot more than they did. " +
+			      "This is what we attribute to as the luck factor; in this presentation, we will take a look at how the luck factor affected all the NBA " +
+			      "teams in the 2020-21 Regular Season.");
 	d3.select("#p2").text("");
 }
 
