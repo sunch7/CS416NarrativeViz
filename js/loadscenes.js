@@ -52,6 +52,14 @@ async function loadScene1() {
 	})
 	svg.call(d3.axisLeft(ys));
 	svg.append("g").attr("transform", "translate(" + 0 + "," + 300 + ")").call(d3.axisBottom(xs));
+	
+	svg.append("image")
+	.attr('x', 550)
+	.attr('y', 300)
+	.attr('width', 20)
+	.attr('height', 24)
+	.attr("xlink:href", "EastWest.png")
+	
   // Text
 	d3.select("#head2").text("Win % vs. Strength of Schedule for NBA teams in 2020-21 Season");
 	d3.select("#p1").text("Scene 1 Test 1");
