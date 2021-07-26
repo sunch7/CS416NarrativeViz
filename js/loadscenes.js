@@ -267,6 +267,8 @@ async function loadteamdata(sel) {
 	
 	// Text
 	d3.select("#head2").text("Detailed Stats for " + data[index]['TEAM']);
+	d3.select("#p1").text("");
+	d3.select("#p2").text("");
 }
 
 function loadimage(svg) {
