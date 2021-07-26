@@ -139,7 +139,7 @@ async function loadScene2() {
 		return (d.CONF == "East" ? d3.color("gold") : d3.color("steelblue"));
 	})
 	.on("mouseover", function(d) {Tooltip.style("opacity", 1); d3.select(this).style("stroke", "black").style("opacity", 1);})
-    	.on("mousemove", function(d) {Tooltip.html("Team: " + d['TEAM']<br>"EDIFF: " + d['EDIFF']<br>"Win Rate: "+d['WIN%'])
+    	.on("mousemove", function(d) {Tooltip.html("Team: " + d['TEAM']+"<br>"+"EDIFF: " + d['EDIFF']+"<br>"+"Win Rate: "+d['WIN%'])
       	.style("left", (d3.mouse(this)[0]+70) + "px")
       	.style("top", (d3.mouse(this)[1]) + "px");})
     	.on("mouseleave", function(d) {Tooltip.style("opacity", 0); d3.select(this).style("stroke", "none").style("opacity", 0.7);});
