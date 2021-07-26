@@ -109,12 +109,13 @@ async function loadScene3() {
 	svg = d3.select("#scenes-div").append("svg").attr("width",700).attr("height",400).append("g").attr("transform", "translate(" + 50 + "," + 50 + ")");
 	
 	svg.append("line")
-	.style("stroke-dasharray", ("3, 3"))
-	.style("stroke-width", 10)
 	.attr("x1", 50)
       	.attr("x2", 650)
       	.attr("y1", 150)
-      	.attr("y2", 150);
+      	.attr("y2", 150)
+	.attr("stroke", "black")
+	.attr("stroke-width", 10)
+	.attr("stroke-dasharray", ("3, 3"));
 	
 	svg.selectAll("rect")
   	.data(data)
