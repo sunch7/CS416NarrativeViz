@@ -170,7 +170,7 @@ async function loadteamdata(sel) {
 	var xs = d3.scaleBand().domain(Category1).range([0,200]);
 	var ys = d3.scaleLinear().domain([100,120]).range([300,0]);
 	var x2s = d3.scaleBand().domain(Category2).range([0,150]);
-	var y2s = d3.scaleLinear().domain([0,72]).range([300,0]);
+	var y2s = d3.scaleLinear().domain([0,1]).range([300,0]);
 	
 	svg.selectAll("rect")
   	.data(PointStats)
@@ -196,8 +196,8 @@ async function loadteamdata(sel) {
     	.attr('height', function(d,i) {return 300-y2s(d);})
 	.style('fill', function(d,i) {return Color2[i];});
 
-	svg.call(d3.axisLeft(ys));
-	svg.append("g").attr("transform", "translate(" + 0 + "," + 300 + ")").call(d3.axisBottom(xs));
+	svg.call(d3.axisLeft(y2s));
+	svg.append("g").attr("transform", "translate(" + 0 + "," + 300 + ")").call(d3.axisBottom(x2s));
 	// Text
 	d3.select("#head2").text("Detailed Stats for " + str(data[index]['TEAM']));
 	d3.select("#p1").text("Scene 3 Test 1");
