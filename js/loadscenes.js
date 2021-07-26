@@ -147,11 +147,12 @@ async function loadScene4() {
 	d3.select("#selector-div").selectAll("SelectTeam").remove();
 	
 	// Dropdown selector
-	d3.select("#selector-div").append("label").attr("for","SelectTeam").attr("onchange", "loadteamdata(this.value)").text("Choose a team: ")
+	d3.select("#selector-div").append("label").attr("for","SelectTeam").text("Choose a team: ")
 	var dropDown = d3.select("#selector-div").append("select").attr("name", "name-list").attr("id","SelectTeam");
 	dropDown.selectAll("option").data(teamdomain).enter().append("option")
 	.text(function(d,i) {return d;})
-	.attr("value", function(d,i) {return d;});
+	.attr("value", function(d,i) {return d;})
+	.attr("onchange", "loadteamdata(this.value)");
 }
 
 async function loadteamdata(Team) {
