@@ -155,7 +155,7 @@ async function loadteamdata(sel) {
 	const data = await d3.csv("2020NBATeamStats.csv");
 	d3.select("#scenes-div").selectAll("svg").remove();
 	
-	svg = d3.select("#scenes-div").append("svg").attr("width",400).attr("height",360).append("g").attr("transform", "translate(" + 50 + "," + 50 + ")");
+	svg = d3.select("#scenes-div").append("svg").attr("width",300).attr("height",400).append("g").attr("transform", "translate(" + 50 + "," + 50 + ")");
 	index = parseInt(sel) - 1;
 	if (index < 0)
 	{
@@ -172,7 +172,7 @@ async function loadteamdata(sel) {
   	.append("rect")
     	.attr('x',function(d,i) {return xs(Category1[i]);})
     	.attr('y',function(d,i) {return ys(d);})
-    	.attr('width', xs.bandwidth() / 2)
+    	.attr('width', xs.bandwidth() / 1.2)
     	.attr('height', function(d,i) {return 300-ys(d);})
 	.style('fill', function(d,i) {
 		return (i % 2 == 1 ? d3.color("grey") : d3.color("green"));
