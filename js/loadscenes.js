@@ -180,7 +180,7 @@ async function loadteamdata(sel) {
 	svg.call(d3.axisLeft(ys));
 	svg.append("g").attr("transform", "translate(" + 0 + "," + 300 + ")").call(d3.axisBottom(xs));
 	// Text
-	d3.select("#head2").text("Detailed Stats for " + str(data[index]['TEAM']);
+	d3.select("#head2").text("Detailed Stats for " + str(data[index]['TEAM']));
 	d3.select("#p1").text("Scene 3 Test 1");
 	d3.select("#p2").text("Scene 3 Test 2");
 }
