@@ -157,6 +157,8 @@ async function loadScene4() {
 async function loadteamdata(Team) {
 	const data = await d3.csv("2020NBATeamStats.csv");
 	svg = d3.select("#scenes-div").append("svg").attr("width",400).attr("height",360).append("g").attr("transform", "translate(" + 50 + "," + 50 + ")");
+	teamdomain = ["Atl","Bos","Bro","Cha","Chi","Cle","Dal","Den","Det","Gol","Hou","Ind","Lac",
+		"Lal","Mem","Mia","Mil","Min","Nor","Nyk","Okc","Orl","Phi","Pho","Por","Sac","San","Tor","Uta","Was"];
 	index = -1;
 	for (int i = 0; i < teamdomain.length; i++) {
 		if (Team == teamdomain[i])
