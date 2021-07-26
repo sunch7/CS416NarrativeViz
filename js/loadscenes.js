@@ -128,7 +128,7 @@ async function loadScene2() {
 	.style("position", "absolute")
 	.style("width", "100px")
 	.style("height", "80px")
-	.style("font", "8px");
+	.style("font-size", "12px");
 	
 	svg = d3.select("#scenes-div").append("svg").attr("width",700).attr("height",360).append("g").attr("transform", "translate(" + 50 + "," + 30 + ")");
 	svg.selectAll("circle")
