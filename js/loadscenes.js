@@ -160,7 +160,7 @@ async function loadteamdata(Team) {
 	teamdomain = ["Atl","Bos","Bro","Cha","Chi","Cle","Dal","Den","Det","Gol","Hou","Ind","Lac",
 		"Lal","Mem","Mia","Mil","Min","Nor","Nyk","Okc","Orl","Phi","Pho","Por","Sac","San","Tor","Uta","Was"];
 	index = -1;
-	for (int i = 0; i < teamdomain.length; i++) {
+	for (let i = 0; i < teamdomain.length; i++) {
 		if (Team == teamdomain[i])
 		{
 			index = i;
