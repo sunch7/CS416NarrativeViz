@@ -155,8 +155,8 @@ async function loadteamdata(sel) {
 	const data = await d3.csv("2020NBATeamStats.csv");
 	d3.select("#scenes-div").selectAll("svg").remove();
 	svg = d3.select("#scenes-div").append("svg").attr("width",400).attr("height",360).append("g").attr("transform", "translate(" + 50 + "," + 50 + ")");
-	index = parseInt(sel);
-	if (index > 29)
+	index = parseInt(sel) - 1;
+	if (index < 0)
 	{
 		return;
 	}
