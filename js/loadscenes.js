@@ -126,7 +126,7 @@ async function loadScene2() {
     	.style("border-radius", "10px")
     	.style("padding", "5px")
 	.style("position", "absolute")
-	.style("width", "80px")
+	.style("width", "90px")
 	.style("height", "50px")
 	.style("font-size", "14px");
 	
