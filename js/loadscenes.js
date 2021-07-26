@@ -53,7 +53,7 @@ async function loadScene1() {
 	svg.call(d3.axisLeft(ys));
 	svg.append("g").attr("transform", "translate(" + 0 + "," + 300 + ")").call(d3.axisBottom(xs));
 	
-	
+	loadimage(svg);
 	
   // Text
 	d3.select("#head2").text("Win % vs. Strength of Schedule for NBA teams in 2020-21 Season");
@@ -90,6 +90,9 @@ async function loadScene2() {
 	})
 	svg.call(d3.axisLeft(ys));
 	svg.append("g").attr("transform", "translate(" + 0 + "," + 300 + ")").call(d3.axisBottom(xs));
+	
+	loadimage(svg);
+	
   // Text
 	d3.select("#head2").text("Win % vs Expected Point Differential per 100 posessions for NBA teams in 2020-21 Season");
 	d3.select("#p1").text("Scene 2 Test 1");
@@ -137,6 +140,8 @@ async function loadScene3() {
 	.attr("stroke", "black")
 	.attr("stroke-width", 2)
 	.attr("stroke-dasharray", ("3, 3"));
+	
+	loadimage(svg);
   
   // Text
 	d3.select("#head2").text("Luck effect for NBA Teams in 2020-21 Season");
