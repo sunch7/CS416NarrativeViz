@@ -123,7 +123,7 @@ async function loadScene3() {
 	
 	svg.append("line")
 	.style("stroke-dasharray", ("3, 3"))
-	.style("stroke-width", 10).
+	.style("stroke-width", 10)
 	.attr("x1", 50)
       	.attr("x2", 650)
       	.attr("y1", 150)
