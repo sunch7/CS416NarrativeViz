@@ -138,11 +138,11 @@ async function loadScene2() {
 	.style('fill', function(d,i) {
 		return (d.CONF == "East" ? d3.color("gold") : d3.color("steelblue"));
 	})
-	.on("mouseover", function(d) {Tooltip.style("opacity", 1); d3.select(this).style("stroke", "black").style("opacity", 1);})
-    	.on("mousemove", function(d) {Tooltip.html("Team: " + d['TEAM'] + "<br>" + "EDIFF: " + d['EDIFF'] + "<br>" + "Win Rate: " + d['WIN%'])
-      	.style("left", (d3.event.clientX) + "px")
-      	.style("top", (d3.event.clientY) + "px");})
-    	.on("mouseleave", function(d) {Tooltip.style("opacity", 0); d3.select(this).style("stroke", "none").style("opacity", 0.7);});
+	.on("mouseover", function(event, d) {Tooltip.transition().duration(200).style("opacity", 0.9);
+	Tooltip.html("Team: " + d['TEAM'] + "<br>" + "EDIFF: " + d['EDIFF'] + "<br>" + "Win Rate: " + d['WIN%'])
+      	.style("left", (event.pageX) + "px")
+      	.style("top", (event.pageY) + "px");})
+    	.on("mouseleave", function(d) {Tooltip.transition().duration(500).style("opacity", 0);});
 	
 	svg.call(d3.axisLeft(ys));
 	svg.append("g").attr("transform", "translate(" + 0 + "," + 300 + ")").call(d3.axisBottom(xs));
