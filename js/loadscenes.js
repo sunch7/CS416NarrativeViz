@@ -66,8 +66,8 @@ async function loadScene1() {
 	})
 	.on("mouseover", function(event, d) {Tooltip.transition().duration(200).style("opacity", 0.9);
 	Tooltip.html("Team: " + d['Team Abbrev.'] + "<br>" + "SOS: " + d['SOS'] + "<br>" + "Win Rate: " + d['WIN%'])
-      	.style("left", (event.pageX) + "px")
-      	.style("top", (event.pageY) + "px");})
+      	.style("left", (event.pageX + 10) + "px")
+      	.style("top", (event.pageY + 10) + "px");})
     	.on("mouseleave", function(d) {Tooltip.transition().duration(500).style("opacity", 0);});
 	
 	svg.call(d3.axisLeft(ys));
@@ -163,8 +163,8 @@ async function loadScene2() {
 	})
 	.on("mouseover", function(event, d) {Tooltip.transition().duration(200).style("opacity", 0.9);
 	Tooltip.html("Team: " + d['Team Abbrev.'] + "<br>" + "EDIFF: " + d['EDIFF'] + "<br>" + "Win Rate: " + d['WIN%'])
-      	.style("left", (event.pageX) + "px")
-      	.style("top", (event.pageY) + "px");})
+      	.style("left", (event.pageX + 10) + "px")
+      	.style("top", (event.pageY + 10) + "px");})
     	.on("mouseleave", function(d) {Tooltip.transition().duration(500).style("opacity", 0);});
 	
 	svg.call(d3.axisLeft(ys));
@@ -262,8 +262,8 @@ async function loadScene3() {
 	})
 	.on("mouseover", function(event, d) {Tooltip.transition().duration(200).style("opacity", 0.9);
 	Tooltip.html("Team: " + d['Team Abbrev.'] + "<br>" + "LAW: " + (d['ACH'] * d['GP']).toFixed(2))
-      	.style("left", (event.pageX) + "px")
-      	.style("top", (event.pageY) + "px");})
+      	.style("left", (event.pageX + 10) + "px")
+      	.style("top", (event.pageY + 10) + "px");})
     	.on("mouseleave", function(d) {Tooltip.transition().duration(500).style("opacity", 0);});
 	
 	svg.call(d3.axisLeft(ys));
@@ -369,8 +369,8 @@ async function loadteamdata(sel) {
 	})
 	.on("mouseover", function(event, d, ) {Tooltip.transition().duration(200).style("opacity", 0.9);
 	Tooltip.html("Value: " + d)
-      	.style("left", (event.pageX) + "px")
-      	.style("top", (event.pageY) + "px");})
+      	.style("left", (event.pageX + 10) + "px")
+      	.style("top", (event.pageY + 10) + "px");})
     	.on("mouseleave", function(d) {Tooltip.transition().duration(500).style("opacity", 0);});
 	
 	svg.call(d3.axisLeft(ys));
@@ -387,8 +387,8 @@ async function loadteamdata(sel) {
 	.style('fill', function(d,i) {return Color2[i];})
 	.on("mouseover", function(event, d) {Tooltip.transition().duration(200).style("opacity", 0.9);
 	Tooltip.html("Value: " + d)
-      	.style("left", (event.pageX) + "px")
-      	.style("top", (event.pageY) + "px");})
+      	.style("left", (event.pageX + 10) + "px")
+      	.style("top", (event.pageY + 10) + "px");})
     	.on("mouseleave", function(d) {Tooltip.transition().duration(500).style("opacity", 0);});
 
 	svg2.call(d3.axisLeft(y2s));
