@@ -107,6 +107,15 @@ async function loadScene3() {
 	d3.select("#selector-div").style("visibility", "hidden");
 	
 	svg = d3.select("#scenes-div").append("svg").attr("width",700).attr("height",400).append("g").attr("transform", "translate(" + 50 + "," + 50 + ")");
+	
+	svg.append("line")
+	.style("stroke-dasharray", ("3, 3"))
+	.style("stroke-width", 10)
+	.attr("x1", 50)
+      	.attr("x2", 650)
+      	.attr("y1", 150)
+      	.attr("y2", 150);
+	
 	svg.selectAll("rect")
   	.data(data)
   	.enter()
@@ -120,14 +129,6 @@ async function loadScene3() {
 	})
 	svg.call(d3.axisLeft(ys));
 	svg.append("g").attr("transform", "translate(" + 0 + "," + 300 + ")").call(d3.axisBottom(xs));
-	
-	svg.append("line")
-	.style("stroke-dasharray", ("3, 3"))
-	.style("stroke-width", 10)
-	.attr("x1", 50)
-      	.attr("x2", 650)
-      	.attr("y1", 150)
-      	.attr("y2", 150);
   
   // Text
 	d3.select("#head2").text("Luck effect for NBA Teams in 2020-21 Season");
