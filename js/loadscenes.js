@@ -155,24 +155,9 @@ async function loadScene4() {
 	.attr("onchange", "loadteamdata(this.value)");
 }
 
-async function loadteamdata(Team) {
+async function loadteamdata(index) {
 	const data = await d3.csv("2020NBATeamStats.csv");
 	svg = d3.select("#scenes-div").append("svg").attr("width",400).attr("height",360).append("g").attr("transform", "translate(" + 50 + "," + 50 + ")");
-	teamdomain = ["Atl","Bos","Bro","Cha","Chi","Cle","Dal","Den","Det","Gol","Hou","Ind","Lac",
-		"Lal","Mem","Mia","Mil","Min","Nor","Nyk","Okc","Orl","Phi","Pho","Por","Sac","San","Tor","Uta","Was"];
-	index = -1;
-	for (let i = 0; i < teamdomain.length; i++) {
-		if (Team == teamdomain[i])
-		{
-			index = i;
-			break;
-		}
-	}
-	Console.log("index = " + str(index));
-	if (index == -1)
-	{
-		return;
-	}
 	
 	PointStats = [data[index]['PTS/GM'], data[index]['aPTS/GM'], data[index]['OEFF'], data[index]['DEFF']];
 	var xs = d3.scaleBand().domain(["Pts For", "Pts Against", "Off. Eff.", "Def. Eff."]).range([0,300]);
