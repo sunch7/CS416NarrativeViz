@@ -127,17 +127,17 @@ async function loadScene2() {
     	.style("border-radius", "5px")
     	.style("padding", "5px")
 
-  	var mouseover = function(d) {Tooltip.style("opacity", 1)
-    	d3.select(this).style("stroke", "black").style("opacity", 1)}
+  	var mouseover = function(d) {Tooltip.style("opacity", 1);
+    	d3.select(this).style("stroke", "black").style("opacity", 1);}
 	
   	var mousemove = function(d) {
     	Tooltip.html("The exact value of<br>this cell is: " + d.value)
       	.style("left", (d3.mouse(this)[0]+70) + "px")
-      	.style("top", (d3.mouse(this)[1]) + "px")}
+      	.style("top", (d3.mouse(this)[1]) + "px");}
 	
   	var mouseleave = function(d) {
-    	Tooltip.style("opacity", 0)
-    	d3.select(this).style("stroke", "none").style("opacity", 0.7)}
+    	Tooltip.style("opacity", 0);
+    	d3.select(this).style("stroke", "none").style("opacity", 0.7);}
 	
 	svg = d3.select("#scenes-div").append("svg").attr("width",700).attr("height",360).append("g").attr("transform", "translate(" + 50 + "," + 30 + ")");
 	svg.selectAll("circle")
@@ -150,6 +150,10 @@ async function loadScene2() {
 	.style('fill', function(d,i) {
 		return (d.CONF == "East" ? d3.color("gold") : d3.color("steelblue"));
 	})
+	.on("mouseover", mouseover)
+    	.on("mousemove", mousemove)
+    	.on("mouseleave", mouseleave);
+	
 	svg.call(d3.axisLeft(ys));
 	svg.append("g").attr("transform", "translate(" + 0 + "," + 300 + ")").call(d3.axisBottom(xs));
 	
