@@ -139,9 +139,9 @@ async function loadScene2() {
 		return (d.CONF == "East" ? d3.color("gold") : d3.color("steelblue"));
 	})
 	.on("mouseover", function(d) {Tooltip.style("opacity", 1); d3.select(this).style("stroke", "black").style("opacity", 1);})
-    	.on("mousemove", function(d) {Tooltip.html("Team: " + String(d['TEAM']) + "<br>" + "EDIFF: " + String(d['EDIFF']) + "<br>" + "Win Rate: " + String(d['WIN%']))
-      	.style("left", (d3.event.pageX) + "px")
-      	.style("top", (d3.event.pageY) + "px");})
+    	.on("mousemove", function(d) {Tooltip.html("Team: " + d['TEAM'] + "<br>" + "EDIFF: " + d['EDIFF'] + "<br>" + "Win Rate: " + d['WIN%'])
+      	.style("left", (d3.event.clientX) + "px")
+      	.style("top", (d3.event.clientY) + "px");})
     	.on("mouseleave", function(d) {Tooltip.style("opacity", 0); d3.select(this).style("stroke", "none").style("opacity", 0.7);});
 	
 	svg.call(d3.axisLeft(ys));
