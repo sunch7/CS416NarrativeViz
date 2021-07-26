@@ -156,7 +156,7 @@ async function loadteamdata(sel) {
 	d3.select("#scenes-div").selectAll("svg").remove();
 	
 	svg = d3.select("#scenes-div").append("svg").attr("width",300).attr("height",400).append("g").attr("transform", "translate(" + 50 + "," + 50 + ")");
-	svg2 = d3.select("#scenes-div").append("svg").attr("width",250).attr("height",400).append("g").attr("transform", "translate(" + 50 + "," + 50 + ")");
+	svg2 = d3.select("#scenes-div").append("svg").attr("width",200).attr("height",400).append("g").attr("transform", "translate(" + 50 + "," + 50 + ")");
 	index = parseInt(sel) - 1;
 	if (index < 0)
 	{
@@ -164,12 +164,12 @@ async function loadteamdata(sel) {
 	}
 	PointStats = [data[index]['PTS/GM'], data[index]['aPTS/GM'], data[index]['OEFF'], data[index]['DEFF']];
 	Category1 = ["Pts For", "Pts Against", "Off. Eff.", "Def. Eff."];
-	WinStats = [data[index]['Win%'], data[index]['eWIN%'], data[index]['SOS']];
-	Category2 = ["Wins", "Expected Wins", "SOS"];
-	Color2 = ["purple", "brown", "pink"]
+	WinStats = [data[index]['WIN%'], data[index]['eWIN%']];
+	Category2 = ["Win%", "Exp. Win%"];
+	Color2 = ["purple", "pink"]
 	var xs = d3.scaleBand().domain(Category1).range([0,200]);
 	var ys = d3.scaleLinear().domain([100,120]).range([300,0]);
-	var x2s = d3.scaleBand().domain(Category2).range([0,150]);
+	var x2s = d3.scaleBand().domain(Category2).range([0,100]);
 	var y2s = d3.scaleLinear().domain([0,1]).range([300,0]);
 	
 	svg.selectAll("rect")
