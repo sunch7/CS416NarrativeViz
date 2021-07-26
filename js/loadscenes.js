@@ -195,7 +195,7 @@ async function loadteamdata(sel) {
     	.attr('width', xs.bandwidth() / 1.2)
     	.attr('height', function(d,i) {return 300-y2s(d);})
 	.style('fill', function(d,i) {return Color2[i];});
-	})
+
 	svg.call(d3.axisLeft(ys));
 	svg.append("g").attr("transform", "translate(" + 0 + "," + 300 + ")").call(d3.axisBottom(xs));
 	// Text
