@@ -125,7 +125,7 @@ async function loadScene3() {
 	.attr("x1", 50)
       	.attr("x2", 650)
       	.attr("y1", 150)
-      	.attr("y2", 150)
+      	.attr("y2", 150);
   
   // Text
 	d3.select("#head2").text("Luck effect for NBA Teams in 2020-21 Season");
