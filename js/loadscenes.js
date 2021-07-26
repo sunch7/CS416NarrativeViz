@@ -39,7 +39,7 @@ async function loadScene1() {
 	d3.select("#scenes-div").selectAll("svg").remove();
 	d3.select("#selector-div").style("visibility", "hidden");
 	
-	svg = d3.select("#scenes-div").append("svg").attr("width",700).attr("height",340).append("g").attr("transform", "translate(" + 20 + "," + 20 + ")");
+	svg = d3.select("#scenes-div").append("svg").attr("width",700).attr("height",340).append("g").attr("transform", "translate(" + 50 + "," + 20 + ")");
 	svg.selectAll("circle")
   	.data(data)
   	.enter()
@@ -99,7 +99,7 @@ async function loadScene2() {
 	d3.select("#scenes-div").selectAll("svg").remove();
 	d3.select("#selector-div").style("visibility", "hidden");
 	
-	svg = d3.select("#scenes-div").append("svg").attr("width",700).attr("height",340).append("g").attr("transform", "translate(" + 20 + "," + 20 + ")");
+	svg = d3.select("#scenes-div").append("svg").attr("width",700).attr("height",340).append("g").attr("transform", "translate(" + 50 + "," + 20 + ")");
 	svg.selectAll("circle")
   	.data(data)
   	.enter()
@@ -158,7 +158,7 @@ async function loadScene3() {
 	d3.select("#scenes-div").selectAll("svg").remove();
 	d3.select("#selector-div").style("visibility", "hidden");
 	
-	svg = d3.select("#scenes-div").append("svg").attr("width",700).attr("height",340).append("g").attr("transform", "translate(" + 20 + "," + 20 + ")");
+	svg = d3.select("#scenes-div").append("svg").attr("width",700).attr("height",340).append("g").attr("transform", "translate(" + 50 + "," + 20 + ")");
 	
 	svg.selectAll("rect")
   	.data(data)
@@ -221,8 +221,8 @@ async function loadteamdata(sel) {
 	const data = await d3.csv("2020NBATeamStats.csv");
 	d3.select("#scenes-div").selectAll("svg").remove();
 	
-	svg = d3.select("#scenes-div").append("svg").attr("width",400).attr("height",340).append("g").attr("transform", "translate(" + 20 + "," + 20 + ")");
-	svg2 = d3.select("#scenes-div").append("svg").attr("width",250).attr("height",340).append("g").attr("transform", "translate(" + 20 + "," + 20 + ")");
+	svg = d3.select("#scenes-div").append("svg").attr("width",400).attr("height",340).append("g").attr("transform", "translate(" + 50 + "," + 20 + ")");
+	svg2 = d3.select("#scenes-div").append("svg").attr("width",250).attr("height",340).append("g").attr("transform", "translate(" + 50 + "," + 20 + ")");
 	index = parseInt(sel) - 1;
 	if (index < 0)
 	{
