@@ -154,7 +154,7 @@ async function loadScene2() {
 	svg.append("text")
     	.attr("class", "x label")
     	.attr("text-anchor", "end")
-    	.attr("x", 600)
+    	.attr("x", 650)
     	.attr("y", 290)
 	.attr("fill", "black")
     	.text("Expected Point Differential per 100 posessions");
