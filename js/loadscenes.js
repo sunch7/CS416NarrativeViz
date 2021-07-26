@@ -55,10 +55,10 @@ async function loadScene1() {
 	
 	svg.append("image")
 	.attr('x', 550)
-	.attr('y', 300)
-	.attr('width', 20)
-	.attr('height', 24)
-	.attr("xlink:href", "EastWest.png")
+	.attr('y', 0)
+	.attr('width', 50)
+	.attr('height', 30)
+	.attr("href", "EastWest.PNG")
 	
   // Text
 	d3.select("#head2").text("Win % vs. Strength of Schedule for NBA teams in 2020-21 Season");
