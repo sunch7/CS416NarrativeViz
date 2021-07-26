@@ -367,7 +367,7 @@ async function loadteamdata(sel) {
 	.style('fill', function(d,i) {
 		return (i % 2 == 1 ? d3.color("grey") : d3.color("green"));
 	})
-	.on("mouseover", function(event, d) {Tooltip.transition().duration(200).style("opacity", 0.9);
+	.on("mouseover", function(event, d, i) {Tooltip.transition().duration(200).style("opacity", 0.9);
 	Tooltip.html(Category1[i] + ": " + d)
       	.style("left", (event.pageX) + "px")
       	.style("top", (event.pageY) + "px");})
@@ -385,7 +385,7 @@ async function loadteamdata(sel) {
     	.attr('width', xs.bandwidth() / 1.2)
     	.attr('height', function(d,i) {return 300-y2s(d);})
 	.style('fill', function(d,i) {return Color2[i];})
-	.on("mouseover", function(event, d) {Tooltip.transition().duration(200).style("opacity", 0.9);
+	.on("mouseover", function(event, d, i) {Tooltip.transition().duration(200).style("opacity", 0.9);
 	Tooltip.html(Category2[i] + ": " + d)
       	.style("left", (event.pageX) + "px")
       	.style("top", (event.pageY) + "px");})
