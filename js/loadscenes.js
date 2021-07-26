@@ -175,10 +175,12 @@ async function loadteamdata(sel) {
     	.attr('width', xs.bandwidth() / 2)
     	.attr('height', function(d,i) {return 300-ys(d);})
 	.style('fill', function(d,i) {
-		return (d.CONF == "East" ? d3.color("gold") : d3.color("steelblue"));
+		return (i % 2 == 1 ? d3.color("grey") : d3.color("green"));
 	})
+	svg.call(d3.axisLeft(ys));
+	svg.append("g").attr("transform", "translate(" + 0 + "," + 300 + ")").call(d3.axisBottom(xs));
 	// Text
-	d3.select("#head2").text("Detailed Stats for each team");
+	d3.select("#head2").text("Detailed Stats for " + str(data[index]['TEAM']);
 	d3.select("#p1").text("Scene 3 Test 1");
 	d3.select("#p2").text("Scene 3 Test 2");
 }
