@@ -74,7 +74,7 @@ async function loadScene1() {
 	svg.append("text")
     	.attr("class", "x label")
     	.attr("text-anchor", "end")
-    	.attr("x", 700)
+    	.attr("x", 650)
     	.attr("y", 290)
 	.attr("fill", "black")
     	.text("Strength of Schedule (SOS)");
@@ -82,8 +82,8 @@ async function loadScene1() {
 	svg.append("text")
     	.attr("class", "y label")
     	.attr("text-anchor", "start")
-	.attr("x", 0)
-    	.attr("y", 10)
+	.attr("x", 10)
+    	.attr("y", 0)
 	.attr("fill", "black")
     	.text("Win Rate");
 	
@@ -147,6 +147,22 @@ async function loadScene2() {
 	.attr("stroke-width", 2)
 	.attr("stroke-dasharray", ("3, 3"));
 	
+	svg.append("text")
+    	.attr("class", "x label")
+    	.attr("text-anchor", "end")
+    	.attr("x", 600)
+    	.attr("y", 290)
+	.attr("fill", "black")
+    	.text("Expected Point Differential per 100 posessions");
+	
+	svg.append("text")
+    	.attr("class", "y label")
+    	.attr("text-anchor", "start")
+	.attr("x", 10)
+    	.attr("y", 0)
+	.attr("fill", "black")
+    	.text("Win Rate");
+	
 	loadimage(svg);
 	
   // Text
@@ -198,6 +214,14 @@ async function loadScene3() {
 	.attr("stroke", "black")
 	.attr("stroke-width", 2)
 	.attr("stroke-dasharray", ("3, 3"));
+	
+	svg.append("text")
+    	.attr("class", "y label")
+    	.attr("text-anchor", "start")
+	.attr("x", 10)
+    	.attr("y", 0)
+	.attr("fill", "black")
+    	.text("Wins attributed to luck");
 	
 	loadimage(svg);
   
