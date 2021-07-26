@@ -76,6 +76,7 @@ async function loadScene1() {
     	.attr("text-anchor", "end")
     	.attr("x", 700)
     	.attr("y", 290)
+	.attr("fill", "black")
     	.text("Strength of Schedule (SOS)");
 	
 	svg.append("text")
@@ -83,6 +84,7 @@ async function loadScene1() {
     	.attr("text-anchor", "start")
 	.attr("x", 0)
     	.attr("y", 10)
+	.attr("fill", "black")
     	.text("Win Rate");
 	
 	loadimage(svg);
