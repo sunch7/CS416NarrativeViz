@@ -196,8 +196,8 @@ async function loadteamdata(sel) {
     	.attr('height', function(d,i) {return 300-y2s(d);})
 	.style('fill', function(d,i) {return Color2[i];});
 
-	svg.call(d3.axisLeft(y2s));
-	svg.append("g").attr("transform", "translate(" + 0 + "," + 300 + ")").call(d3.axisBottom(x2s));
+	svg2.call(d3.axisLeft(y2s));
+	svg2.append("g").attr("transform", "translate(" + 0 + "," + 300 + ")").call(d3.axisBottom(x2s));
 	// Text
 	d3.select("#head2").text("Detailed Stats for " + str(data[index]['TEAM']));
 	d3.select("#p1").text("Scene 3 Test 1");
