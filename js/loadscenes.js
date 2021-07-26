@@ -39,7 +39,7 @@ async function loadScene1() {
 	d3.select("#scenes-div").selectAll("svg").remove();
 	d3.select("#selector-div").style("visibility", "hidden");
 	
-	svg = d3.select("#scenes-div").append("svg").attr("width",700).attr("height",340).append("g").attr("transform", "translate(" + 50 + "," + 20 + ")");
+	svg = d3.select("#scenes-div").append("svg").attr("width",700).attr("height",360).append("g").attr("transform", "translate(" + 50 + "," + 30 + ")");
 	svg.selectAll("circle")
   	.data(data)
   	.enter()
@@ -71,10 +71,24 @@ async function loadScene1() {
 	.attr("stroke-width", 2)
 	.attr("stroke-dasharray", ("3, 3"));
 	
+	svg.append("text")
+    	.attr("class", "x label")
+    	.attr("text-anchor", "end")
+    	.attr("x", 700)
+    	.attr("y", 290)
+    	.text("Strength of Schedule (SOS)");
+	
+	svg.append("text")
+    	.attr("class", "y label")
+    	.attr("text-anchor", "start")
+	.attr("x", 0)
+    	.attr("y", 10)
+    	.text("Win Rate");
+	
 	loadimage(svg);
 	
   // Text
-	d3.select("#head2").text("Win % vs. Strength of Schedule for NBA teams in 2020-21 Season");
+	d3.select("#head2").text("Win rate vs. Strength of Schedule for NBA teams in 2020-21 Season");
 	d3.select("#p1").text("The first thing we look at is the strength of schedule (SOS), an indicator for how strong their average opponent is - the higher the SOS, " +
 			     "the tougher the team's opponents are. Since teams don't play the same opponents, we may expect SOS to be part of the luck factor. However, " +
 			     "here we see that SOS is actually related to Win %; teams with a higher win rate tend to have a lower SOS and vice versa. This is expected, " +
@@ -99,7 +113,7 @@ async function loadScene2() {
 	d3.select("#scenes-div").selectAll("svg").remove();
 	d3.select("#selector-div").style("visibility", "hidden");
 	
-	svg = d3.select("#scenes-div").append("svg").attr("width",700).attr("height",340).append("g").attr("transform", "translate(" + 50 + "," + 20 + ")");
+	svg = d3.select("#scenes-div").append("svg").attr("width",700).attr("height",360).append("g").attr("transform", "translate(" + 50 + "," + 30 + ")");
 	svg.selectAll("circle")
   	.data(data)
   	.enter()
@@ -158,7 +172,7 @@ async function loadScene3() {
 	d3.select("#scenes-div").selectAll("svg").remove();
 	d3.select("#selector-div").style("visibility", "hidden");
 	
-	svg = d3.select("#scenes-div").append("svg").attr("width",700).attr("height",340).append("g").attr("transform", "translate(" + 50 + "," + 20 + ")");
+	svg = d3.select("#scenes-div").append("svg").attr("width",700).attr("height",360).append("g").attr("transform", "translate(" + 50 + "," + 30 + ")");
 	
 	svg.selectAll("rect")
   	.data(data)
@@ -221,8 +235,8 @@ async function loadteamdata(sel) {
 	const data = await d3.csv("2020NBATeamStats.csv");
 	d3.select("#scenes-div").selectAll("svg").remove();
 	
-	svg = d3.select("#scenes-div").append("svg").attr("width",400).attr("height",340).append("g").attr("transform", "translate(" + 50 + "," + 20 + ")");
-	svg2 = d3.select("#scenes-div").append("svg").attr("width",250).attr("height",340).append("g").attr("transform", "translate(" + 50 + "," + 20 + ")");
+	svg = d3.select("#scenes-div").append("svg").attr("width",400).attr("height",360).append("g").attr("transform", "translate(" + 50 + "," + 30 + ")");
+	svg2 = d3.select("#scenes-div").append("svg").attr("width",250).attr("height",360).append("g").attr("transform", "translate(" + 50 + "," + 30 + ")");
 	index = parseInt(sel) - 1;
 	if (index < 0)
 	{
