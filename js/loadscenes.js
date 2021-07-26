@@ -144,15 +144,14 @@ async function loadScene4() {
 	teamdomain = ["Atl","Bos","Bro","Cha","Chi","Cle","Dal","Den","Det","Gol","Hou","Ind","Lac",
 		"Lal","Mem","Mia","Mil","Min","Nor","Nyk","Okc","Orl","Phi","Pho","Por","Sac","San","Tor","Uta","Was"];
 	d3.select("#scenes-div").selectAll("svg").remove();
-	d3.select("#selector-div").selectAll("SelectTeam").remove();
 	
 	// Dropdown selector
-	d3.select("#selector-div").append("label").attr("for","SelectTeam").text("Choose a team: ")
+	/*d3.select("#selector-div").append("label").attr("for","SelectTeam").text("Choose a team: ")
 	var dropDown = d3.select("#selector-div").append("select").attr("name", "name-list").attr("id","SelectTeam");
 	dropDown.selectAll("option").data(teamdomain).enter().append("option")
 	.text(function(d,i) {return d;})
 	.attr("value", function(d,i) {return d;})
-	.attr("onchange", "loadteamdata(this.value)");
+	.attr("onchange", "loadteamdata(this.value)");*/
 }
 
 async function loadteamdata(sel) {
