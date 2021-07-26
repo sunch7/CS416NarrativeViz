@@ -120,6 +120,12 @@ async function loadScene3() {
 	})
 	svg.call(d3.axisLeft(ys));
 	svg.append("g").attr("transform", "translate(" + 0 + "," + 300 + ")").call(d3.axisBottom(xs));
+	
+	svg.append("path").attr("class","line").style("stroke-dasharray", ("3, 3"))
+	.attr("x1", 50)
+      	.attr("x2", 650)
+      	.attr("y1", 150)
+      	.attr("y2", 150)
   
   // Text
 	d3.select("#head2").text("Luck effect for NBA Teams in 2020-21 Season");
