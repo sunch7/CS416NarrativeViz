@@ -30,6 +30,20 @@ async function loadScene1() {
 	d3.select("#scene2").style("background-color",'');
 	d3.select("#scene3").style("background-color",'');
 	d3.select("#scene4").style("background-color",'');
+	
+	// Tooltip
+	var Tooltip = d3.select("#scenes-div").select("#tooltip-div")
+    	.style("opacity", 0)
+    	.attr("class", "tooltip")
+    	.style("background-color", "lavender")
+    	.style("border", "0px")
+    	.style("border-radius", "10px")
+    	.style("padding", "5px")
+	.style("position", "absolute")
+	.style("width", "100px")
+	.style("height", "50px")
+	.style("font-size", "14px");
+	
   // Data
 	const data = await d3.csv("2020NBATeamStats.csv");
 	teamdomain = ["Atl","Bos","Bro","Cha","Chi","Cle","Dal","Den","Det","Gol","Hou","Ind","Lac",
@@ -50,6 +64,12 @@ async function loadScene1() {
 	.style('fill', function(d,i) {
 		return (d.CONF == "East" ? d3.color("gold") : d3.color("steelblue"));
 	})
+	.on("mouseover", function(event, d) {Tooltip.transition().duration(200).style("opacity", 0.9);
+	Tooltip.html("Team: " + d['Team Abbrev.'] + "<br>" + "SOS: " + d['SOS'] + "<br>" + "Win Rate: " + d['WIN%'])
+      	.style("left", (event.pageX) + "px")
+      	.style("top", (event.pageY) + "px");})
+    	.on("mouseleave", function(d) {Tooltip.transition().duration(500).style("opacity", 0);});
+	
 	svg.call(d3.axisLeft(ys));
 	svg.append("g").attr("transform", "translate(" + 0 + "," + 300 + ")").call(d3.axisBottom(xs));
 	
@@ -126,7 +146,7 @@ async function loadScene2() {
     	.style("border-radius", "10px")
     	.style("padding", "5px")
 	.style("position", "absolute")
-	.style("width", "90px")
+	.style("width", "100px")
 	.style("height", "50px")
 	.style("font-size", "14px");
 	
@@ -215,8 +235,20 @@ async function loadScene3() {
 	d3.select("#scenes-div").selectAll("svg").remove();
 	d3.select("#selector-div").style("visibility", "hidden");
 	
-	svg = d3.select("#scenes-div").append("svg").attr("width",700).attr("height",360).append("g").attr("transform", "translate(" + 50 + "," + 30 + ")");
+	// Tooltip
+	var Tooltip = d3.select("#scenes-div").select("#tooltip-div")
+    	.style("opacity", 0)
+    	.attr("class", "tooltip")
+    	.style("background-color", "lavender")
+    	.style("border", "0px")
+    	.style("border-radius", "10px")
+    	.style("padding", "5px")
+	.style("position", "absolute")
+	.style("width", "80px")
+	.style("height", "40px")
+	.style("font-size", "14px");
 	
+	svg = d3.select("#scenes-div").append("svg").attr("width",700).attr("height",360).append("g").attr("transform", "translate(" + 50 + "," + 30 + ")");
 	svg.selectAll("rect")
   	.data(data)
   	.enter()
@@ -228,6 +260,12 @@ async function loadScene3() {
 	.style('fill', function(d,i) {
 		return (d.CONF == "East" ? d3.color("gold") : d3.color("steelblue"));
 	})
+	.on("mouseover", function(event, d) {Tooltip.transition().duration(200).style("opacity", 0.9);
+	Tooltip.html("Team: " + d['Team Abbrev.'] + "<br>" + "LAW: " + d['ACH'] * d['GP'])
+      	.style("left", (event.pageX) + "px")
+      	.style("top", (event.pageY) + "px");})
+    	.on("mouseleave", function(d) {Tooltip.transition().duration(500).style("opacity", 0);});
+	
 	svg.call(d3.axisLeft(ys));
 	svg.append("g").attr("transform", "translate(" + 0 + "," + 300 + ")").call(d3.axisBottom(xs));
 	
@@ -248,7 +286,7 @@ async function loadScene3() {
 	.attr("x", 10)
     	.attr("y", 0)
 	.attr("fill", "black")
-    	.text("Wins attributed to luck");
+    	.text("Luck-Attributed Wins (LAW)");
 	
 	loadimage(svg);
   
@@ -305,6 +343,19 @@ async function loadteamdata(sel) {
 	var x2s = d3.scaleBand().domain(Category2).range([0,150]);
 	var y2s = d3.scaleLinear().domain([0,1]).range([300,0]);
 	
+	// Tooltip
+	var Tooltip = d3.select("#scenes-div").select("#tooltip-div")
+    	.style("opacity", 0)
+    	.attr("class", "tooltip")
+    	.style("background-color", "lavender")
+    	.style("border", "0px")
+    	.style("border-radius", "10px")
+    	.style("padding", "5px")
+	.style("position", "absolute")
+	.style("width", "80px")
+	.style("height", "40px")
+	.style("font-size", "14px");
+	
 	svg.selectAll("rect")
   	.data(PointStats)
   	.enter()
@@ -316,6 +367,12 @@ async function loadteamdata(sel) {
 	.style('fill', function(d,i) {
 		return (i % 2 == 1 ? d3.color("grey") : d3.color("green"));
 	})
+	.on("mouseover", function(event, d) {Tooltip.transition().duration(200).style("opacity", 0.9);
+	Tooltip.html(Category1[i] + d)
+      	.style("left", (event.pageX) + "px")
+      	.style("top", (event.pageY) + "px");})
+    	.on("mouseleave", function(d) {Tooltip.transition().duration(500).style("opacity", 0);});
+	
 	svg.call(d3.axisLeft(ys));
 	svg.append("g").attr("transform", "translate(" + 0 + "," + 300 + ")").call(d3.axisBottom(xs));
 	
@@ -327,7 +384,12 @@ async function loadteamdata(sel) {
     	.attr('y',function(d,i) {return y2s(d);})
     	.attr('width', xs.bandwidth() / 1.2)
     	.attr('height', function(d,i) {return 300-y2s(d);})
-	.style('fill', function(d,i) {return Color2[i];});
+	.style('fill', function(d,i) {return Color2[i];})
+	.on("mouseover", function(event, d) {Tooltip.transition().duration(200).style("opacity", 0.9);
+	Tooltip.html(Category2[i] + d)
+      	.style("left", (event.pageX) + "px")
+      	.style("top", (event.pageY) + "px");})
+    	.on("mouseleave", function(d) {Tooltip.transition().duration(500).style("opacity", 0);});
 
 	svg2.call(d3.axisLeft(y2s));
 	svg2.append("g").attr("transform", "translate(" + 0 + "," + 300 + ")").call(d3.axisBottom(x2s));
