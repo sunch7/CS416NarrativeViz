@@ -53,6 +53,7 @@ async function loadScene1() {
 	svg.call(d3.axisLeft(ys));
 	svg.append("g").attr("transform", "translate(" + 0 + "," + 300 + ")").call(d3.axisBottom(xs));
 	
+	// Annotation
 	svg.append("line")
 	.attr("x1", 0)
       	.attr("x2", 600)
@@ -71,6 +72,7 @@ async function loadScene1() {
 	.attr("stroke-width", 2)
 	.attr("stroke-dasharray", ("3, 3"));
 	
+	// Axis Labels
 	svg.append("text")
     	.attr("class", "x label")
     	.attr("text-anchor", "end")
@@ -95,7 +97,7 @@ async function loadScene1() {
 			     "the tougher the team's opponents are. Since teams don't play the same opponents, we may expect SOS to be part of the luck factor. However, " +
 			     "here we see that SOS is actually related to Win %; teams with a higher win rate tend to have a lower SOS and vice versa. This is expected, " +
 			     "as those high win rate teams themselves wins more against their opponents and will lower their own SOS.");
-	d3.select("#p2").text("So, strength of schedule isn't a great measure for luck as the team's own performance influences it. Are there other measures we can use" +
+	d3.select("#p2").text("So, strength of schedule isn't a great measure for luck as the team's own performance influences it. Are there other measures we can use " +
 			     "to evaluate luck?");
 }
 
@@ -129,6 +131,7 @@ async function loadScene2() {
 	svg.call(d3.axisLeft(ys));
 	svg.append("g").attr("transform", "translate(" + 0 + "," + 300 + ")").call(d3.axisBottom(xs));
 	
+	// Annotation
 	svg.append("line")
 	.attr("x1", 0)
       	.attr("x2", 600)
@@ -147,6 +150,7 @@ async function loadScene2() {
 	.attr("stroke-width", 2)
 	.attr("stroke-dasharray", ("3, 3"));
 	
+	// Axis Labels
 	svg.append("text")
     	.attr("class", "x label")
     	.attr("text-anchor", "end")
@@ -206,6 +210,7 @@ async function loadScene3() {
 	svg.call(d3.axisLeft(ys));
 	svg.append("g").attr("transform", "translate(" + 0 + "," + 300 + ")").call(d3.axisBottom(xs));
 	
+	// Annotation
 	svg.append("line")
 	.attr("x1", 0)
       	.attr("x2", 600)
@@ -215,6 +220,7 @@ async function loadScene3() {
 	.attr("stroke-width", 2)
 	.attr("stroke-dasharray", ("3, 3"));
 	
+	// Axis Labels
 	svg.append("text")
     	.attr("class", "y label")
     	.attr("text-anchor", "start")
