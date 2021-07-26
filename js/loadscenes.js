@@ -156,6 +156,7 @@ async function loadteamdata(sel) {
 	d3.select("#scenes-div").selectAll("svg").remove();
 	
 	svg = d3.select("#scenes-div").append("svg").attr("width",300).attr("height",400).append("g").attr("transform", "translate(" + 50 + "," + 50 + ")");
+	svg2 = d3.select("#scenes-div").append("svg").attr("width",250).attr("height",400).append("g").attr("transform", "translate(" + 50 + "," + 50 + ")");
 	index = parseInt(sel) - 1;
 	if (index < 0)
 	{
@@ -163,8 +164,13 @@ async function loadteamdata(sel) {
 	}
 	PointStats = [data[index]['PTS/GM'], data[index]['aPTS/GM'], data[index]['OEFF'], data[index]['DEFF']];
 	Category1 = ["Pts For", "Pts Against", "Off. Eff.", "Def. Eff."];
+	WinStats = [data[index]['Win%'], data[index]['eWIN%'], data[index]['SOS']];
+	Category2 = ["Wins", "Expected Wins", "SOS"];
+	Color2 = ["purple", "brown", "pink"]
 	var xs = d3.scaleBand().domain(Category1).range([0,200]);
 	var ys = d3.scaleLinear().domain([100,120]).range([300,0]);
+	var x2s = d3.scaleBand().domain(Category2).range([0,150]);
+	var y2s = d3.scaleLinear().domain([0,72]).range([300,0]);
 	
 	svg.selectAll("rect")
   	.data(PointStats)
@@ -176,6 +182,19 @@ async function loadteamdata(sel) {
     	.attr('height', function(d,i) {return 300-ys(d);})
 	.style('fill', function(d,i) {
 		return (i % 2 == 1 ? d3.color("grey") : d3.color("green"));
+	})
+	svg.call(d3.axisLeft(ys));
+	svg.append("g").attr("transform", "translate(" + 0 + "," + 300 + ")").call(d3.axisBottom(xs));
+	
+	svg2.selectAll("rect")
+  	.data(WinStats)
+  	.enter()
+  	.append("rect")
+    	.attr('x',function(d,i) {return x2s(Category2[i]);})
+    	.attr('y',function(d,i) {return y2s(d);})
+    	.attr('width', xs.bandwidth() / 1.2)
+    	.attr('height', function(d,i) {return 300-y2s(d);})
+	.style('fill', function(d,i) {return Color2[i];});
 	})
 	svg.call(d3.axisLeft(ys));
 	svg.append("g").attr("transform", "translate(" + 0 + "," + 300 + ")").call(d3.axisBottom(xs));
