@@ -11,7 +11,7 @@ async function loadIntro() {
 	
 	// Data
 	d3.select("#scenes-div").selectAll("svg").remove();
-	d3.select("#selector-div").style("visibility", "hidden");
+	// d3.select("#selector-div").style("visibility", "hidden");
 	
 	// Text
 	d3.select("#head2").text("Introduction");
