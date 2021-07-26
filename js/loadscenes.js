@@ -155,10 +155,10 @@ async function loadScene4() {
 	.attr("onchange", "loadteamdata(this.value)");
 }
 
-async function loadteamdata(index) {
+async function loadteamdata(sel) {
 	const data = await d3.csv("2020NBATeamStats.csv");
 	svg = d3.select("#scenes-div").append("svg").attr("width",400).attr("height",360).append("g").attr("transform", "translate(" + 50 + "," + 50 + ")");
-	
+	index = parseInt(sel);
 	PointStats = [data[index]['PTS/GM'], data[index]['aPTS/GM'], data[index]['OEFF'], data[index]['DEFF']];
 	var xs = d3.scaleBand().domain(["Pts For", "Pts Against", "Off. Eff.", "Def. Eff."]).range([0,300]);
 	var ys = d3.scaleLinear().domain([100,120]).range([300,0]);
