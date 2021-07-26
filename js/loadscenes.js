@@ -121,7 +121,9 @@ async function loadScene3() {
 	svg.call(d3.axisLeft(ys));
 	svg.append("g").attr("transform", "translate(" + 0 + "," + 300 + ")").call(d3.axisBottom(xs));
 	
-	svg.append("path").attr("class","line").style("stroke-dasharray", ("3, 3"))
+	svg.append("line")
+	.style("stroke-dasharray", ("3, 3"))
+	.style("stroke-width", 10).
 	.attr("x1", 50)
       	.attr("x2", 650)
       	.attr("y1", 150)
