@@ -352,7 +352,7 @@ async function loadteamdata(sel) {
     	.style("border-radius", "10px")
     	.style("padding", "5px")
 	.style("position", "absolute")
-	.style("width", "120px")
+	.style("width", "80px")
 	.style("height", "20px")
 	.style("font-size", "14px");
 	
@@ -367,8 +367,8 @@ async function loadteamdata(sel) {
 	.style('fill', function(d,i) {
 		return (i % 2 == 1 ? d3.color("grey") : d3.color("green"));
 	})
-	.on("mouseover", function(event, d, i) {Tooltip.transition().duration(200).style("opacity", 0.9);
-	Tooltip.html(Category1[i] + ": " + d)
+	.on("mouseover", function(event, d, ) {Tooltip.transition().duration(200).style("opacity", 0.9);
+	Tooltip.html("Value: " + d)
       	.style("left", (event.pageX) + "px")
       	.style("top", (event.pageY) + "px");})
     	.on("mouseleave", function(d) {Tooltip.transition().duration(500).style("opacity", 0);});
@@ -385,8 +385,8 @@ async function loadteamdata(sel) {
     	.attr('width', xs.bandwidth() / 1.2)
     	.attr('height', function(d,i) {return 300-y2s(d);})
 	.style('fill', function(d,i) {return Color2[i];})
-	.on("mouseover", function(event, d, i) {Tooltip.transition().duration(200).style("opacity", 0.9);
-	Tooltip.html(Category2[i] + ": " + d)
+	.on("mouseover", function(event, d) {Tooltip.transition().duration(200).style("opacity", 0.9);
+	Tooltip.html("Value: " + d)
       	.style("left", (event.pageX) + "px")
       	.style("top", (event.pageY) + "px");})
     	.on("mouseleave", function(d) {Tooltip.transition().duration(500).style("opacity", 0);});
