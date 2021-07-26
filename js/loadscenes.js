@@ -121,14 +121,14 @@ async function loadScene2() {
 	var Tooltip = d3.select("#scenes-div").select("#tooltip-div")
     	.style("opacity", 0)
     	.attr("class", "tooltip")
-    	.style("background-color", "white")
-    	.style("border", "solid")
-    	.style("border-width", "2px")
-    	.style("border-radius", "5px")
+    	.style("background-color", "lavender")
+    	.style("border", "0px")
+    	.style("border-radius", "10px")
     	.style("padding", "5px")
 	.style("position", "absolute")
 	.style("width", "100px")
-	.style("height", "100px");
+	.style("height", "40px")
+	.style("font", "12px");
 	
 	svg = d3.select("#scenes-div").append("svg").attr("width",700).attr("height",360).append("g").attr("transform", "translate(" + 50 + "," + 30 + ")");
 	svg.selectAll("circle")
