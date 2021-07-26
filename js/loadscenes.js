@@ -140,7 +140,7 @@ async function loadScene4() {
 	teamdomain = ["Atl","Bos","Bro","Cha","Chi","Cle","Dal","Den","Det","Gol","Hou","Ind","Lac",
 		"Lal","Mem","Mia","Mil","Min","Nor","Nyk","Okc","Orl","Phi","Pho","Por","Sac","San","Tor","Uta","Was"];
 	d3.select("#scenes-div").selectAll("svg").remove();
-	d3.select("#selector-div").style("visibility", "visible");'
+	d3.select("#selector-div").style("visibility", "visible");
 	d3.select("#head2").text("");
 	d3.select("#p1").text("");
 	d3.select("#p2").text("");
