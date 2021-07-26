@@ -203,5 +203,5 @@ async function loadteamdata(sel) {
 	svg2.append("g").attr("transform", "translate(" + 0 + "," + 300 + ")").call(d3.axisBottom(x2s));
 	
 	// Text
-	d3.select("#head2").text("Detailed Stats for " + str(data[index]['TEAM']));
+	d3.select("#head2").text("Detailed Stats for " + data[index]['TEAM']);
 }
