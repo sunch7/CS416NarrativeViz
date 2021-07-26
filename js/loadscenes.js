@@ -146,7 +146,8 @@ async function loadScene4() {
 	d3.select("#p2").text("");
 	
 	// Dropdown selector
-	d3.select("#selector-div").select("#SelectTeam").select("option").attr("selected", true);
+	var dropdown = d3.select("#selector-div").select("#SelectTeam");
+	loadteamdata(dropdown.selectedIndex);
 }
 
 async function loadteamdata(sel) {
