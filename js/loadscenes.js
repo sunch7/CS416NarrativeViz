@@ -11,7 +11,7 @@ async function loadIntro() {
 	
 	// Data
 	d3.select("#scenes-div").selectAll("svg").remove();
-	d3.select("#selector-div").selectAll("select").attr("visibility", "hidden");
+	d3.select("#selector-div").select("#SelectTeam").attr("visibility", "hidden");
 	d3.select("#selector-div").selectAll("label").attr("visibility", "hidden");
 	
 	// Text
@@ -34,7 +34,7 @@ async function loadScene1() {
 	var xs = d3.scaleLinear().domain([-1.5,1.5]).range([0,600]);
 	var ys = d3.scaleLinear().domain([0,1]).range([300,0]);
 	d3.select("#scenes-div").selectAll("svg").remove();
-	d3.select("#selector-div").selectAll("select").attr("visibility", "hidden");
+	d3.select("#selector-div").select("#SelectTeam").attr("visibility", "hidden");
 	d3.select("#selector-div").selectAll("label").attr("visibility", "hidden");
 	
 	svg = d3.select("#scenes-div").append("svg").attr("width",700).attr("height",400).append("g").attr("transform", "translate(" + 50 + "," + 50 + ")");
@@ -70,7 +70,7 @@ async function loadScene2() {
 	var xs = d3.scaleLinear().domain([-11,11]).range([0,600]);
 	var ys = d3.scaleLinear().domain([0,1]).range([300,0]);
 	d3.select("#scenes-div").selectAll("svg").remove();
-	d3.select("#selector-div").selectAll("select").attr("visibility", "hidden");
+	d3.select("#selector-div").select("#SelectTeam").attr("visibility", "hidden");
 	d3.select("#selector-div").selectAll("label").attr("visibility", "hidden");
 	
 	svg = d3.select("#scenes-div").append("svg").attr("width",700).attr("height",400).append("g").attr("transform", "translate(" + 50 + "," + 50 + ")");
@@ -107,8 +107,8 @@ async function loadScene3() {
 	var xs = d3.scaleBand().domain(teamdomain).range([0,600]);
 	var ys = d3.scaleLinear().domain([-9,9]).range([300,0]);
 	d3.select("#scenes-div").selectAll("svg").remove();
-	d3.select("#selector-div").selectAll("select").attr("visibility", "visible");
-	d3.select("#selector-div").selectAll("label").attr("visibility", "visible");
+	d3.select("#selector-div").select("#SelectTeam").attr("visibility", "hidden");
+	d3.select("#selector-div").selectAll("label").attr("visibility", "hidden");
 	
 	svg = d3.select("#scenes-div").append("svg").attr("width",700).attr("height",400).append("g").attr("transform", "translate(" + 50 + "," + 50 + ")");
 	svg.selectAll("rect")
@@ -144,8 +144,8 @@ async function loadScene4() {
 	teamdomain = ["Atl","Bos","Bro","Cha","Chi","Cle","Dal","Den","Det","Gol","Hou","Ind","Lac",
 		"Lal","Mem","Mia","Mil","Min","Nor","Nyk","Okc","Orl","Phi","Pho","Por","Sac","San","Tor","Uta","Was"];
 	d3.select("#scenes-div").selectAll("svg").remove();
-	d3.select("#selector-div").selectAll("select").show();
-	d3.select("#selector-div").selectAll("label").show();
+	d3.select("#selector-div").select("#SelectTeam").attr("visibility", "visible");
+	d3.select("#selector-div").selectAll("label").attr("visibility", "visible");
 	
 	// Dropdown selector
 	/*d3.select("#selector-div").append("label").attr("for","SelectTeam").text("Choose a team: ")
