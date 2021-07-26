@@ -163,7 +163,7 @@ async function loadteamdata(sel) {
 	}
 	PointStats = [data[index]['PTS/GM'], data[index]['aPTS/GM'], data[index]['OEFF'], data[index]['DEFF']];
 	Category1 = ["Pts For", "Pts Against", "Off. Eff.", "Def. Eff."];
-	var xs = d3.scaleBand().domain(Category1).range([0,300]);
+	var xs = d3.scaleBand().domain(Category1).range([0,200]);
 	var ys = d3.scaleLinear().domain([100,120]).range([300,0]);
 	
 	svg.selectAll("rect")
